@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_voice_memo">
+
+    <fragment
+        android:id="@+id/navigation_voice_memo"
+        android:name="com.example.android_voice_memo.ui.voicememo.VoiceMemoFragment"
+        android:label="@string/bottom_voice_memo"
+        tools:layout="@layout/fragment_voice_memo" >
+        <action
+            android:id="@+id/action_navigation_voice_memo_to_navigation_list"
+            app:destination="@id/navigation_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_list"
+        android:name="com.example.android_voice_memo.ui.index.ListFragment"
+        android:label="@string/bottom_list"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_listFragment_to_editFragment"
+            app:destination="@id/navigation_edit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_delete"
+        android:name="com.example.android_voice_memo.ui.delete.DeleteFragment"
+        android:label="@string/bottom_delete"
+        tools:layout="@layout/fragment_delete" />
+
+    <fragment
+        android:id="@+id/navigation_edit"
+        android:name="com.example.android_voice_memo.ui.index.EditFragment"
+        android:label="@string/bottom_edit"
+        tools:layout="@layout/fragment_edit">
+        <action
+            android:id="@+id/action_editFragment_to_listFragment"
+            app:destination="@id/navigation_list" />
+    </fragment>
+</navigation>
